@@ -1,0 +1,56 @@
+@use "variables"
+@use "mixins"
+@use "typography"
+//Generales
+body
+  font-family: typography.$font__main
+
+//Componentes
+.container
+  //width: min(100% - 4rem, 40rem) es una alternativa a lo de abajo
+  margin-inline: auto
+  max-width: 62rem
+  padding-inline: 1rem
+  //padding-inline para ponerte relleno en los laterales;
+  //padding-block para poner relleno superior e inferior.
+
+
+
+.image
+  display: block
+  width: 100%
+  object-fit: cover
+  object-position: center
+
+.ul-reset
+  display: flex
+  flex-wrap: wrap
+  list-style: none
+  padding: 0
+
+.link
+  display: inline-block
+  color: inherit
+  text-decoration: none
+
+.bold
+  font-weight: bold
+
+.button
+  display: inline-flex
+  align-items: center
+  box-sizing: border-box
+  padding: variables.$gap__xs variables.$gap__l
+  min-width: variables.$gap__l
+  text-decoration: none
+  width: max-content
+  background: variables.$color__enfasis
+  color: variables.$color__bg
+  border-radius: .3rem
+  box-shadow: 0 0 variables.$gap__xs transparentize(variables.$color__enfasis, .1)
+  @include  mixins.hover
+    background-color: variables.$color__main
+    color: variables.$color__bg
+      box-shadow: 0 0 variables.$gap__xs transparentize(variables.$color__main, .1)
+
+
